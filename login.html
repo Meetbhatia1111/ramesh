@@ -1,0 +1,51 @@
+<?php include('register.php'); ?>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Download PDF with Signup Form</title>
+  <!-- Add Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Sign Up to Download PDF</h2>
+        <form id="signupForm" method="POST" action="register.php">
+          <div class="form-group">
+            <label for="name">User Name:</label>
+            <input type="text" class="form-control" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" class="form-control" id="date" name="date" required>
+          </div>
+          <div class="form-group">
+            <label for="aadharno">Aadhar No:</label>
+            <input type="text" class="form-control" id="aadharno" name="aadharno" minlength="12" maxlength="12" 
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="contactno">Contact No:</label>
+            <input type="text" class="form-control" id="contactno" name="contactno" minlength="10" maxlength="10" 
+            onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+          </div>
+          <button type="submit" name="submit" class="btn btn-primary" href="register.php">Sign Up & Download PDF</button>
+        </form>
+        <script>
+          // Set the default value of the date input to the current date
+          document.getElementById("date").value = new Date().toISOString().slice(0, 10);
+      </script>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
